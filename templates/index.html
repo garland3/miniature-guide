@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚢 Battleship Game</h1>
+            <div class="game-controls">
+                <button id="new-game-btn" class="btn btn-primary">New Game</button>
+                <div class="game-info">
+                    <span id="turn-indicator">Click "New Game" to start</span>
+                    <span id="game-status"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area" id="game-area" style="display: none;">
+            <div class="boards-container">
+                <div class="board-section">
+                    <h2>Your Board</h2>
+                    <p class="board-description">Your ships are shown here. Defend them!</p>
+                    <div class="board" id="player-board"></div>
+                    <div class="ships-status" id="player-ships-status"></div>
+                </div>
+
+                <div class="board-section">
+                    <h2>Enemy Waters</h2>
+                    <p class="board-description">Click to attack the enemy ships!</p>
+                    <div class="board" id="computer-board"></div>
+                    <div class="ships-status" id="computer-ships-status"></div>
+                </div>
+            </div>
+
+            <div class="game-log">
+                <h3>Battle Log</h3>
+                <div id="log-content"></div>
+            </div>
+        </div>
+
+        <div class="rules">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Click "New Game" to start a new battle</li>
+                <li>Click on the enemy board (right side) to attack</li>
+                <li>🎯 X = Hit, ⭕ O = Miss, 🚢 S = Your ships</li>
+                <li>Sink all enemy ships to win!</li>
+                <li>Ships: Carrier(5), Battleship(4), Cruiser(3), Submarine(3), Destroyer(2)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="game-over-title"></h2>
+            <p id="game-over-message"></p>
+            <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
